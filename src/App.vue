@@ -8,7 +8,7 @@
     <el-button icon="Male">111</el-button>
   </div>
   <div>
-    <el-pagination v-model:current-page="currentPage" v-model:page-size="pageSize" :page-sizes="[100, 200, 300, 400]"
+    <el-pagination v-model:current-page="currentPage" v-model:page-size="pageSize" :page-sizes="pageSizes"
       layout="total, sizes, prev, pager, next, jumper" :total="400" />
   </div>
 </template>
@@ -25,19 +25,4 @@ const pageSizes = [100, 200, 300, 400]
 
 </script>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style scoped></style>
