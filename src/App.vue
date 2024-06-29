@@ -19,7 +19,7 @@ defineOptions({ name: "App" })
 
 import { ref } from 'vue'
 
-const currentPage = ref(4)
+const currentPage = ref(1)
 const pageSize = ref(100)
 const pageSizes = [100, 200, 300, 400]
 
