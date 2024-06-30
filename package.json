@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open",
-    "build": "vue-tsc && vite build",
+    "build:prod": "vue-tsc && vite build --mode production",
+    "build:stage": "vue-tsc && vite build --mode stage",
     "preview": "vite preview",
     "clean": "rimraf dist && rimraf node_modules"
   },

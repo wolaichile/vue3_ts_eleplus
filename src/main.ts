@@ -20,3 +20,5 @@ app.use(ElementPlus, { locale: zhCn })
 app.use(installPlugin)
 
 app.mount('#app')
+
+console.log("环境变量：：：", import.meta.env)
