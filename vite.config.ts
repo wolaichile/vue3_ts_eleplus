@@ -9,8 +9,10 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
+import { viteMockServe } from 'vite-plugin-mock'
+
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   resolve: {
     alias: {
       '@': path.resolve('./src')
@@ -38,6 +40,27 @@ export default defineConfig({
     createSvgIconsPlugin({
       iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
       symbolId: 'icon-[dir]-[name]'
+    }),
+    // 项目开发阶段使用mock
+    viteMockServe({
+      watchFiles: true,
+      mockPath: 'mock',
+      enable: true || command === 'serve',
     })
   ],
-})
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5173',
+        rewrite: (path) => path.replace(new RegExp(`^/api`), ''),
+      },
+      '/upload': {
+        target: 'http://localhost:5173/upload',
+        changeOrigin: true,
+        ws: true,
+        rewrite: (path) => path.replace(new RegExp(`^/upload`), ''),
+      },
+    },
+    open: true, // 项目启动后，自动打开
+  },
+}))

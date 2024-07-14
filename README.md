@@ -32,3 +32,6 @@ css: {
         }
     }
 }
+
+## 引入mockjs
+pnpm i vite-plugin-mock mockjs -D

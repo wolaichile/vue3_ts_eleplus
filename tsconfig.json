@@ -21,7 +21,7 @@
     "noFallthroughCasesInSwitch": true,
 
     /* 解析相对模块地址、路径映射 */
-    "baseUrl": "/",
+    "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
     }

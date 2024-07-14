@@ -18,11 +18,18 @@
 <script setup lang="ts">
 defineOptions({ name: "App" })
 
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+
+import { login, getUserInfo } from "@/api/user.ts"
 
 const currentPage = ref(1)
 const pageSize = ref(100)
 const pageSizes = [100, 200, 300, 400]
+
+onMounted(() => {
+  login()
+  getUserInfo()
+})
 
 </script>
 
