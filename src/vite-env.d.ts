@@ -4,6 +4,9 @@
 
 interface ImportMetaEnv {
     readonly VITE_APP_TITLE: string
+    readonly VITE_PORT: string
+    readonly VITE_PUBLIC_PATH: string
+    readonly VITE_ROUTER_HISTORY: string
     // 更多环境变量...
 }
 

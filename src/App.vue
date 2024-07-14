@@ -11,6 +11,7 @@
     <el-pagination v-model:current-page="currentPage" v-model:page-size="pageSize" :page-sizes="pageSizes"
       layout="total, sizes, prev, pager, next, jumper" :total="400" />
   </div>
+  <svg-icon name="fapiao" color="pink" />
 </template>
 
 
@@ -25,4 +26,8 @@ const pageSizes = [100, 200, 300, 400]
 
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.el-button {
+  color: $color;
+}
+</style>
