@@ -20,15 +20,21 @@ defineOptions({ name: "App" })
 
 import { ref, onMounted } from 'vue'
 
-import { login, getUserInfo } from "@/api/user.ts"
+import { login, getUserInfo } from "@/api/user/index.ts"
 
 const currentPage = ref(1)
 const pageSize = ref(100)
 const pageSizes = [100, 200, 300, 400]
 
-onMounted(() => {
-  login()
-  getUserInfo()
+onMounted(async () => {
+  try {
+    const res1 = await login({ username: "admin", password: "123456" })
+    console.log(res1);
+    const res2 = await getUserInfo()
+    console.log(res2);
+  } catch (error) {
+
+  }
 })
 
 </script>

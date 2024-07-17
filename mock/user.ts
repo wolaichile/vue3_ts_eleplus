@@ -2,7 +2,7 @@ import { MockMethod } from 'vite-plugin-mock'
 
 // 登陆成功
 function login() {
-    return "登陆成功"
+    return { token: '123456' }
 }
 
 // 获取用户信息

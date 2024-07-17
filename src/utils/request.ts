@@ -43,6 +43,10 @@ service.interceptors.response.use(
         // } else {
         //   return res;
         // }
+        const { status, data } = response
+        if (status == 200 && data && data.code == 200) {
+            return data
+        }
         return response;
     },
     error => {

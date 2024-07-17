@@ -43,9 +43,8 @@ export default defineConfig(({ command }) => ({
     }),
     // 项目开发阶段使用mock
     viteMockServe({
-      watchFiles: true,
       mockPath: 'mock',
-      enable: true || command === 'serve',
+      enable: command === 'serve',
     })
   ],
   server: {
@@ -53,13 +52,7 @@ export default defineConfig(({ command }) => ({
       '/api': {
         target: 'http://localhost:5173',
         rewrite: (path) => path.replace(new RegExp(`^/api`), ''),
-      },
-      '/upload': {
-        target: 'http://localhost:5173/upload',
-        changeOrigin: true,
-        ws: true,
-        rewrite: (path) => path.replace(new RegExp(`^/upload`), ''),
-      },
+      }
     },
     open: true, // 项目启动后，自动打开
   },
