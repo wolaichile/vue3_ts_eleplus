@@ -12,6 +12,9 @@
       layout="total, sizes, prev, pager, next, jumper" :total="400" />
   </div>
   <svg-icon name="fapiao" color="pink" />
+  <div>
+    <router-view></router-view>
+  </div>
 </template>
 
 

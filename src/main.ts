@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import router from './router'
 
 import ElementPlus from "element-plus"
 import zhCn from 'element-plus/es/locale/lang/zh-cn.mjs'
@@ -18,6 +19,8 @@ import App from './App.vue'
 
 
 const app = createApp(App)
+// 注册路由
+app.use(router)
 
 // 引入UI库、国际化
 app.use(ElementPlus, { locale: zhCn })
