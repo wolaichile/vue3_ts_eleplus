@@ -1,3 +1,4 @@
+import { type RouteLocation } from "vue-router"
 
 // 加载组件
 // export const _import = (path = "") => import(path)
@@ -22,7 +23,10 @@ export const constantRoutes = [
     },
     {
         // path: "*",
+        // redirect: "/404",
         path: "/:pathMatch(.*)*",
-        redirect: "/404",
+        redirect: (to: RouteLocation) => {
+            return { path: "/404", query: { redirect: to.fullPath } }
+        },
     }
 ]

@@ -3,6 +3,7 @@ import router from './router'
 
 import ElementPlus from "element-plus"
 import zhCn from 'element-plus/es/locale/lang/zh-cn.mjs'
+// import en from 'element-plus/dist/locale/en.mjs'
 import "element-plus/dist/index.css"
 
 // 第三方svg 需要的配置代码
@@ -23,7 +24,7 @@ const app = createApp(App)
 app.use(router)
 
 // 引入UI库、国际化
-app.use(ElementPlus, { locale: zhCn })
+app.use(ElementPlus, { locale: zhCn, size: 'default' })
 
 // 引入自定义全局组件
 app.use(installComponent)

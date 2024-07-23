@@ -10,12 +10,16 @@ defineOptions({ name: "SvgIcon" })
 
 // 属性声明，带默认值
 interface prop {
-    name: string, color?: string,
-    width?: string, height?: string
+    name: string,
+    color?: string,
+    width?: string,
+    height?: string
 }
 withDefaults(defineProps<prop>(), {
-    name: "", color: "black",
-    width: "16px", height: "16px",
+    name: "",
+    color: "black",
+    width: "16px",
+    height: "16px",
 })
 
 </script>
