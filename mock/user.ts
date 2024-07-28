@@ -1,9 +1,5 @@
 import { MockMethod } from 'vite-plugin-mock'
 
-// 登陆成功
-function login() {
-    return { token: '123456' }
-}
 
 // 获取用户信息
 function getUserInfo() {
@@ -14,10 +10,11 @@ export default [
     {
         url: '/user/login',
         method: 'post',
+        headers: { 'A-token': '1234567890' },
         response: () => {
             return {
                 code: 200,
-                data: login(),
+                data: getUserInfo(),
                 message: "登陆成功"
             }
         }

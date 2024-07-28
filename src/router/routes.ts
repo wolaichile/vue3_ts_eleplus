@@ -22,6 +22,10 @@ export const constantRoutes = [
         component: () => import("@/views/404/index.vue"),
     },
     {
+        path: "/",
+        redirect: "/welcome",
+    },
+    {
         // path: "*",
         // redirect: "/404",
         path: "/:pathMatch(.*)*",
