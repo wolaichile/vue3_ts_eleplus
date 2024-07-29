@@ -71,7 +71,7 @@ export const elNotification = (params: elNotificationParams) => {
         message: "......",
         title: "消息",
         duration: 4500,
-        position: "bottom-right",
+        position: "top-right",
         dangerouslyUseHTMLString: false
     }, params))
 }

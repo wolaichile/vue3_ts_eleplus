@@ -39,7 +39,7 @@ import { useRouter } from 'vue-router'
 import { loginForm } from "@/api/user/type.ts"
 import { useUserStore } from "@/store/modules/user"
 
-import { elMessage, elNotification } from "@/utils"
+import { elMessage, elNotification, timePeriod } from "@/utils"
 
 const router = useRouter()
 const userStore = useUserStore()
@@ -51,12 +51,13 @@ const form = ref<loginForm>({
 })
 const btnLoading = ref<boolean>(false)
 
+// 确定登录
 const sureLogin = async () => {
     try {
         btnLoading.value = true
         await userStore.userLogin(form.value)
-        elMessage({ message: "登录成功", })
-        elNotification({ message: "登录成功" })
+        elMessage({ message: "登录成功" })
+        elNotification({ title: "Hi, " + timePeriod(), message: "欢迎回来" })
         router.push({ path: '/' })
     } catch (error) {
 
