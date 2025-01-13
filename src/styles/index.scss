@@ -1,5 +1,5 @@
 // 清除默认样式
-@import "./reset.scss";
+@forward "./reset.scss";
 
 // 设置页面容器、组件容器样式
 #app {
